@@ -1,4 +1,5 @@
 <?php 
+require_once 'User.php';
 
 
 
@@ -8,28 +9,12 @@
 
 
 
-
-class User
-{
-	
-	public $name;
-	public $age;
-	
-	public function getname()
-	{
-		echo $this->name;
-		echo "<br>";
-		echo $this->age;
-	}
-}
-
-
-$mas = new User;
+$mas = new User("Пробас");
 
 $mas->name = "Fish";
 $mas->age = 18;
 
-$mas->getname();
+echo $mas->getname();
 
 
 
