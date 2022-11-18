@@ -1,5 +1,4 @@
 <?php 
-require_once 'User.php';
 
 
 
@@ -9,19 +8,47 @@ require_once 'User.php';
 
 
 
-$mas = new User("Пробас");
 
-$mas->name = "Fish";
-$mas->age = 18;
-
-echo $mas->getname();
-
-
-
-
+interface iUser
+{
+	
+	public function getName($names);
+	public function getAge($ages);
+	
+}
 
 
+class User implements iUser
+{
+	
+	public $name;
+	public $age;
+	
+	public function getName($name)
+	{
+		return $this->name = $name;
+		
+	}
+	
+	public function getAge($age)
+	{
+		return $this->age = $age;
+	}
+	
+	
+	
+	
+}
 
+$mas = new User;
+
+$name = $mas->getName("Fish");
+
+$age = $mas->getName(18);
+
+echo $name;
+echo "<br>";
+echo $age;
 
 
 
