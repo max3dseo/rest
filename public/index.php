@@ -4,9 +4,10 @@
 
 spl_autoload_register(function($class) {
 	
-	$filename = str_replace('\\', '/', $class) . '.php';
+	$root = $_SERVER['DOCUMENT_ROOT'];
+	$filename = $root . '/' . str_replace('\\', '/', $class) . '.php';
 	require($filename);
-	echo $filename;
+	echo "filename: $filename";
 	echo "<br><br>";
 });
 
